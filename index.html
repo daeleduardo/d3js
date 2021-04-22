@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>D3.js learning from scratch</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="./custom.css" />
+</head>
+
+<body>
+    <div id="title" class="uk-container uk-container-xsmall uk-color-white"
+        uk-scrollspy="cls: uk-animation-slide-bottom; repeat: true">
+        <h4 class="uk-text-center "><img src="https://cdn.svgporn.com/logos/d3.svg" width="20" height="20"
+                alt="d3.js logo"> scratch - Starbucks in USA</h4>
+        <h6 class="uk-text-center ">Some states don't have starbucks stores and the numbers are random!</h6>
+    </div>
+    <div id="content" class="uk-container uk-container-xsmall uk-flex uk-flex-column"
+        uk-scrollspy="cls: uk-animation-slide-bottom; repeat: true">
+        <ul id="menu" class="uk-flex uk-tab uk-child-width-expand" uk-switcher>
+            <li><a href="">Bar Chart</a></li>
+            <li><a href="">Line Chart</a></li>
+            <li><a href="">Bubble Chart</a></li>
+        </ul>
+        <select id="selectButton" class="uk-form-small uk-select">
+            <option value=''>Select the state</option>
+        </select>
+        <div id="spinner" class="uk-text-center" uk-spinner></div>
+        <ul id="charts" class="uk-switcher uk-margin">
+            <li>
+                <div id="bar" class="uk-flex uk-flex-column"><svg></svg></div>
+            </li>
+            <li>
+                <div id="line" class="uk-flex uk-flex-column"><svg></svg></div>
+            </li>
+            <li>
+                <div id="bubble" class="uk-flex uk-flex-column"><svg></svg></div>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- D3js -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- UIkit JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
+    <!-- Custom CSS-->
+    <script src="custom.js"></script>
+    <script src="bar.js"></script>
+    <script src="bubble.js"></script>
+    <script src="line.js"></script>
+    <script>
+        start();
+    </script>
+</body>
+
+</html>
