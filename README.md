@@ -12,3 +12,5 @@ Os dados numéricos são gerados de forma aleatória, com base em um JSON que ca
 
 
 Site para visualização: [link](https://vigilant-liskov-7ed9c2.netlify.app/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/19c69729-bb79-44d7-bc3c-9b68407aed9f/deploy-status)](https://app.netlify.com/sites/vigilant-liskov-7ed9c2/deploys)
