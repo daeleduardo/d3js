@@ -25,8 +25,7 @@ function getBarCharts(db) {
     const barHeight = 30;
     const MAX_WIDTH = screen.width;
     const MAX_HEIGHT = ((Object.keys(db).length) * (barHeight * 1.82)) + (barHeight * 2);
-    const MAX_BAR_WIDTH = MAX_WIDTH - 30;
-    const dataSize = Object.keys(db).length;
+    const MAX_BAR_WIDTH = Math.ceil(MAX_WIDTH/3);
     let scaleFactor = 0.2;
     let maxValue = d3.max(Object.values(db), d => d.value) * scaleFactor;
 
@@ -73,8 +72,7 @@ function getBarCharts(db) {
     const txtValues = groupBars
         .append("text")
         .attr("x", (d) => {
-            return (((d.value * scaleFactor) / maxValue) * MAX_BAR_WIDTH) + (((d.value * scaleFactor) == maxValue) ? 0 : 53);
-
+            return (((d.value * scaleFactor) / maxValue) * MAX_BAR_WIDTH) + (((d.value * scaleFactor) == maxValue) ? 72 : 53);
         })
         .attr("y", barHeight / 2)
         .attr("dy", "1.5em")
@@ -90,9 +88,10 @@ function getBarCharts(db) {
         .style("fill", COLORS.AQUA)
         .style("stroke", COLORS.WHITE)
         .attr("width", (d) => {
-            return ((d.value * scaleFactor) / maxValue) * MAX_BAR_WIDTH;
+            return Math.min((((d.value * scaleFactor) / maxValue) * MAX_BAR_WIDTH),MAX_BAR_WIDTH);
         });
-
+;
+        
     txtValues.transition().delay((d, i) => { return i * 15; })
         .duration(2000)
         .attr("class", "uk-color-black");
